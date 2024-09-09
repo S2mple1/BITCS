@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/cal.css" rel="stylesheet" />
+    <title>计算器</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="glass-card box">
+        <form method="post" action="/cgi-bin/calculator.py">
+          <label for="op1">OP1</label>
+          <input type="number" name="op1" id="op1" required />
+          <label for="op2">OP2</label>
+          <input type="number" name="op2" id="op2" required />
+          <label for="operation">Operation</label>
+          <select name="operation" id="operation" required>
+            <option value="add">Add（+）</option>
+            <option value="subtract">Subtract（-）</option>
+            <option value="multiply">Multiply（×）</option>
+            <option value="divide">Divide（÷）</option>
+          </select>
+          <button type="submit" class="button">Calculate ✨</button>
+          <a href="index.html" class="button">Return 🚩</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

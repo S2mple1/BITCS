@@ -1,0 +1,36 @@
+.box {
+  position: fixed;
+  top: 12%;
+  left: 28%;
+  width: 40%;
+  height: 70%;
+}
+
+form {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.2fr 2fr;
+  /* grid-template-rows: 2fr 2fr 1fr 1fr; */
+  padding: 3vw;
+  padding-top: 3.5vw;
+  column-gap: 1vw;
+  row-gap: 2vw;
+}
+label {
+  font-size: 1.5vw;
+  display: flex;
+  align-items: center;
+}
+input {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+}

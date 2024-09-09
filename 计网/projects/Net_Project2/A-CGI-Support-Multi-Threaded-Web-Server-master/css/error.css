@@ -1,0 +1,27 @@
+.box {
+  position: fixed;
+  top: 12%;
+  left: 28%;
+  width: 40%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  padding: 2vw 1vw;
+}
+span {
+  font-size: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  width: 30%;
+}

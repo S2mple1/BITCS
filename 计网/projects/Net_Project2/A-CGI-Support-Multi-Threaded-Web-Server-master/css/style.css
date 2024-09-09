@@ -1,0 +1,62 @@
+/* global settings & UI style */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Set rem */
+  /* percentage of user-browser setting */
+  font-size: 62.5%;
+}
+
+body {
+  /* ------------------------------ Initial setup ----------------------------- */
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  /* -------------------------------------------------------------------------- */
+}
+
+.glass-card {
+  /* border: 1px solid #fff; */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  background-image: linear-gradient(
+    rgba(185, 185, 185, 0.55),
+    rgba(157, 157, 157, 0.5)
+  );
+}
+
+.button {
+  font-size: 1.1vw;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FAF9DE;
+  border: 1px solid #FAF9DE;
+  border-radius: 24px;
+  color: #636363;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+  background-color: #FDE6E0;
+  border-color: #FDE6E0;
+  color: #ffffff;
+}
+
+.container {
+  background-image: linear-gradient(
+      rgba(62, 62, 62, 0.25),
+      rgba(52, 52, 52, 0.3)
+    ),
+    url("./img/background.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  color: #fff;
+}

@@ -1,0 +1,64 @@
+.intel_syntax noprefix
+.extern printf
+.global myprint
+.global main
+.data
+format_str:
+.asciz "%d\n"
+.text
+
+
+myprint:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 12]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 16]
+push eax
+push offset format_str
+call printf
+add esp, 8
+leave
+ret
+
+main:
+push ebp
+mov ebp, esp
+sub esp, 12
+push 1
+pop eax
+mov DWORD PTR [ebp - 4], eax
+push 2
+pop eax
+mov DWORD PTR [ebp - 8], eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+pop ebx
+pop eax
+add eax, ebx
+push eax
+pop eax
+mov DWORD PTR [ebp - 12], eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call myprint
+add esp, 12
+push 0
+pop eax
+leave
+ret

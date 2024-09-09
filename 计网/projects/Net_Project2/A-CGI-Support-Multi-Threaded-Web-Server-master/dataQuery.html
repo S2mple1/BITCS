@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/query.css" rel="stylesheet" />
+    <title>query</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="glass-card box">
+        <form method="post" action="/cgi-bin/query.py">
+          <label for="ID">ID</label>
+          <input type="text" name="id" id="id" />
+          <label for="NAME">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="CLASS">Class</label>
+          <input type="text" name="class" id="class" />
+          <button type="submit" class="button">Query 🔍</button>
+          <a href="index.html" class="button">Return 🚩</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

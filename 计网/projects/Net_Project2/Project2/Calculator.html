@@ -1,0 +1,34 @@
+<html>
+
+<title>Home</title>
+</head>
+
+<body>
+    <form method="post" action="./Calculator.py">
+		<div class="login">
+			<h2>Calculator</h2>
+			<div class="login-top">
+				1st num: <input type="text" name="a" value="num1" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'num1';}">
+				<br>
+				2nd num: <input type="text" name="b" value="num2" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'num2';}">
+				<div class="forgot">
+					+<input type = "radio" name = "ch" value = "add"/>
+					-<input type = "radio" name = "ch" value = "sub"/>
+					*<input type = "radio" name = "ch" value = "mul"/>
+					/<input type = "radio" name = "ch" value = "div"/>
+					<input type="submit" value="=" />
+				</div>
+			</div>
+			
+			
+			<div class="login-bottom">
+				
+			</div>
+		</div>
+	</div>
+    </form>
+	
+	
+</body>
+
+</html>

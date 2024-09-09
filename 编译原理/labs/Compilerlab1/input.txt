@@ -1,0 +1,10 @@
+int a ;
+int c ;
+int b ;
+int d ;
+a = 1 ;
+b = - 20 ;
+b = a = a - 3 ;
+c = b / a * 5 ;
+d = a - b + c ;
+return d ;

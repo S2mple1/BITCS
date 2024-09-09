@@ -1,0 +1,66 @@
+.intel_syntax noprefix
+.extern printf
+.global sum
+.global main
+.data
+format_str:
+.asciz "%d\n"
+.text
+
+
+sum:
+push ebp
+mov ebp, esp
+sub esp, 4
+mov eax, DWORD PTR [ebp + 8]
+push eax
+push 0
+pop ebx
+pop eax
+cmp eax, ebx
+sete al
+movzx eax, al
+push eax
+pop eax
+cmp eax, 0
+je .else_1
+push 0
+pop eax
+.else_1:
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 8]
+push eax
+push 1
+pop ebx
+pop eax
+sub eax, ebx
+push eax
+call sum
+add esp, 4
+push eax
+pop ebx
+pop eax
+add eax, ebx
+push eax
+pop eax
+jmp .if_end_1
+.if_end_1:
+leave
+ret
+
+main:
+push ebp
+mov ebp, esp
+sub esp, 0
+push 5
+call sum
+add esp, 4
+push eax
+push offset format_str
+call printf
+add esp, 8
+push 0
+pop eax
+leave
+ret

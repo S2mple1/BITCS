@@ -1,0 +1,9 @@
+
+
+int main() {
+  int literal1;
+
+  literal1 = 114*5+2;
+
+  return 0;
+}

@@ -1,0 +1,314 @@
+.intel_syntax noprefix
+.extern printf
+.global opplus
+.global opminus
+.global opmul
+.global opdiv
+.global opmod
+.global opand
+.global opor
+.global opxor
+.global opplus_114514
+.global main
+.data
+format_str:
+.asciz "%d\n"
+.text
+
+
+opplus:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+add eax, ebx
+push eax
+pop eax
+leave
+ret
+
+opminus:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+sub eax, ebx
+push eax
+pop eax
+leave
+ret
+
+opmul:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+imul eax, ebx
+push eax
+pop eax
+leave
+ret
+
+opdiv:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+cdq
+idiv ebx
+push eax
+pop eax
+leave
+ret
+
+opmod:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+cdq
+idiv ebx
+push edx
+pop eax
+leave
+ret
+
+opand:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+and eax, ebx
+push eax
+pop eax
+leave
+ret
+
+opor:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+or eax, ebx
+push eax
+pop eax
+leave
+ret
+
+opxor:
+push ebp
+mov ebp, esp
+sub esp, 0
+mov eax, DWORD PTR [ebp + 8]
+push eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+pop ebx
+pop eax
+xor eax, ebx
+push eax
+pop eax
+leave
+ret
+
+opplus_114514:
+push ebp
+mov ebp, esp
+sub esp, 12
+mov eax, DWORD PTR [ebp + 8]
+push eax
+pop eax
+mov DWORD PTR [ebp - 4], eax
+mov eax, DWORD PTR [ebp + 16]
+push eax
+pop eax
+mov DWORD PTR [ebp - 8], eax
+mov eax, DWORD PTR [ebp + 20]
+push eax
+pop eax
+mov DWORD PTR [ebp - 12], eax
+mov eax, DWORD PTR [ebp + 12]
+push eax
+push 114514
+pop ebx
+pop eax
+add eax, ebx
+push eax
+pop eax
+leave
+ret
+
+main:
+push ebp
+mov ebp, esp
+sub esp, 44
+push 114
+pop eax
+mov DWORD PTR [ebp - 4], eax
+push 514
+pop eax
+mov DWORD PTR [ebp - 8], eax
+push 3
+push 2
+call opplus
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 20], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opminus
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 12], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opmul
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 16], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opdiv
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 24], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opmod
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 28], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opand
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 32], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opor
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 36], eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call opxor
+add esp, 8
+pop eax
+mov DWORD PTR [ebp - 40], eax
+push 4
+push 3
+push 2
+push 1
+call opplus_114514
+add esp, 16
+pop eax
+mov DWORD PTR [ebp - 44], eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 8]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 20]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 12]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 16]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 24]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 28]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 32]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 36]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 40]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp - 44]
+push eax
+push offset format_str
+call printf
+add esp, 8
+push 0
+pop eax
+leave
+ret

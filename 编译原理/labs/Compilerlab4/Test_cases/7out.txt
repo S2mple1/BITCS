@@ -1,0 +1,194 @@
+.intel_syntax noprefix
+.extern printf
+.global print3
+.global print4
+.global main
+.data
+format_str:
+.asciz "%d\n"
+.text
+
+
+print3:
+push ebp
+mov ebp, esp
+sub esp, 4
+mov eax, DWORD PTR [ebp + 8]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 12]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 16]
+push eax
+push offset format_str
+call printf
+add esp, 8
+leave
+ret
+
+print4:
+push ebp
+mov ebp, esp
+sub esp, 4
+mov eax, DWORD PTR [ebp + 8]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 12]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 16]
+push eax
+push offset format_str
+call printf
+add esp, 8
+mov eax, DWORD PTR [ebp + 20]
+push eax
+push offset format_str
+call printf
+add esp, 8
+leave
+ret
+
+main:
+push ebp
+mov ebp, esp
+sub esp, 16
+push 114
+pop eax
+mov DWORD PTR [ebp - 4], eax
+push 114
+pop eax
+neg eax
+push eax
+pop eax
+mov DWORD PTR [ebp - 8], eax
+push 514
+pop eax
+mov DWORD PTR [ebp - 12], eax
+push 514
+pop eax
+neg eax
+push eax
+pop eax
+mov DWORD PTR [ebp - 16], eax
+mov eax, DWORD PTR [ebp - 16]
+push eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call print4
+add esp, 16
+mov eax, DWORD PTR [ebp - 4]
+push eax
+pop eax
+neg eax
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+pop eax
+neg eax
+push eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+pop eax
+neg eax
+push eax
+mov eax, DWORD PTR [ebp - 16]
+push eax
+pop eax
+neg eax
+push eax
+call print4
+add esp, 0
+mov eax, DWORD PTR [ebp - 4]
+push eax
+pop eax
+not eax
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+pop eax
+not eax
+push eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+pop eax
+not eax
+push eax
+mov eax, DWORD PTR [ebp - 16]
+push eax
+pop eax
+not eax
+push eax
+call print4
+add esp, 0
+push 1
+pop eax
+mov DWORD PTR [ebp - 4], eax
+push 0
+pop eax
+mov DWORD PTR [ebp - 8], eax
+push 1
+pop eax
+neg eax
+push eax
+pop eax
+mov DWORD PTR [ebp - 12], eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+mov eax, DWORD PTR [ebp - 4]
+push eax
+call print3
+add esp, 12
+mov eax, DWORD PTR [ebp - 4]
+push eax
+pop eax
+neg eax
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+pop eax
+neg eax
+push eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+pop eax
+neg eax
+push eax
+call print3
+add esp, 0
+mov eax, DWORD PTR [ebp - 4]
+push eax
+pop eax
+not eax
+push eax
+mov eax, DWORD PTR [ebp - 8]
+push eax
+pop eax
+not eax
+push eax
+mov eax, DWORD PTR [ebp - 12]
+push eax
+pop eax
+not eax
+push eax
+call print3
+add esp, 0
+push 0
+pop eax
+leave
+ret
