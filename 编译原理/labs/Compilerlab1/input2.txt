@@ -1,9 +1,0 @@
-int a ;
-int b ;
-int c ;
-int d ;
-a = 1 ;
-b = - 2 ;
-c = 3 ;
-d = ( - 1 - 1 + b * ( 2 - 8 ) ) / c - 3 ;
-return d ;
